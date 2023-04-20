@@ -1,0 +1,6 @@
+.gradle
+build
+.idea
+# Project exclude paths
+/Simple Tic-Tac-Toe (Kotlin)/task/out/
+/Simple Tic-Tac-Toe (Kotlin)/task/out/production/classes/

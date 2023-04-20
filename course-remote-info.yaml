@@ -1,0 +1,120 @@
+hyperskill_project:
+  id: 123
+  ide_files: https://stepik.org/media/attachments/lesson/394081/additional_files.json
+  is_template_based: false
+  use_ide: true
+update_date: Thu, 01 Jan 1970 00:00:00 UTC
+stages:
+- id: 654
+  step: 10475
+  is_completed: true
+- id: 655
+  step: 10476
+  is_completed: true
+- id: 656
+  step: 10477
+  is_completed: false
+- id: 657
+  step: 10478
+  is_completed: false
+- id: 658
+  step: 10479
+  is_completed: false
+topics:
+  0:
+  - title: Computer programming
+    theory_id: 8739
+  - title: Introduction to Kotlin
+    theory_id: 4350
+  - title: Basic literals
+    theory_id: 4351
+  - title: Overview of the basic program
+    theory_id: 4362
+  - title: Standard output
+    theory_id: 4425
+  1:
+  - title: Values and variables
+    theory_id: 4371
+  - title: Val variables
+    theory_id: 17408
+  - title: Data types
+    theory_id: 4388
+  - title: Invoking functions
+    theory_id: 4575
+  - title: Standard input with Java Scanner
+    theory_id: 4445
+  - title: String basics
+    theory_id: 12553
+  - title: String templates
+    theory_id: 4547
+  2:
+  - title: Binary numbers
+    theory_id: 5544
+  - title: Hexadecimal numbers
+    theory_id: 8788
+  - title: Units of information
+    theory_id: 6865
+  - title: The classification of basic types
+    theory_id: 4455
+  - title: Type conversion
+    theory_id: 4672
+  - title: Reading data with a readln
+    theory_id: 11224
+  - title: Boolean and logical operations
+    theory_id: 4515
+  - title: Arithmetic operations
+    theory_id: 4472
+  - title: Type of the numeric expression
+    theory_id: 9506
+  - title: Increment and decrement
+    theory_id: 10776
+  - title: Integers in action
+    theory_id: 4488
+  - title: Relational operators
+    theory_id: 4525
+  - title: If expression
+    theory_id: 4625
+  - title: Repeating blocks
+    theory_id: 4643
+  - title: Objects
+    theory_id: 11233
+  - title: Equality
+    theory_id: 11236
+  - title: Unicode
+    theory_id: 7899
+  - title: Characters
+    theory_id: 4680
+  - title: Ranges
+    theory_id: 4633
+  - title: Introduction to MutableList
+    theory_id: 14879
+  - title: For loop and ranges
+    theory_id: 4652
+  - title: Work with MutableLists
+    theory_id: 14902
+  - title: For loop and lists
+    theory_id: 15022
+  - title: Working with strings
+    theory_id: 12561
+  - title: Multi-dimensional list
+    theory_id: 15127
+  3:
+  - title: Comments
+    theory_id: 4406
+  - title: Coding style conventions
+    theory_id: 4419
+  - title: Naming variables
+    theory_id: 4389
+  - title: Declaring functions
+    theory_id: 4580
+  - title: While loops
+    theory_id: 4659
+  - title: Getting substrings
+    theory_id: 8535
+  - title: Processing strings
+    theory_id: 9027
+  4:
+  - title: When expression
+    theory_id: 4631
+  - title: Jumps and returns
+    theory_id: 6165

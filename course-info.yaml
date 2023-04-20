@@ -1,0 +1,12 @@
+type: hyperskill
+title: Simple Tic-Tac-Toe (Kotlin)
+language: English
+summary: '<p>Everybody remembers this paper-and-pencil game from childhood: Tic-Tac-Toe,
+  also known as Noughts and crosses or Xs and Os. A single mistake usually costs you
+  the game, but thankfully it is simple enough that most players discover the best
+  strategy quickly. Let’s program Tic-Tac-Toe and get playing!</p><br/><br/>Learn
+  more at <a href="https://hyperskill.org/projects/123?utm_source=ide&utm_medium=ide&utm_campaign=ide&utm_content=project-card">https://hyperskill.org/projects/123</a>'
+programming_language: Kotlin
+content:
+- Simple Tic-Tac-Toe (Kotlin)
+mode: Study

@@ -1,0 +1,83 @@
+<h5 id="description" style="text-align: center;">Description</h5>
+<p>In this stage, we’re going to analyze the game state to determine if either player has already won the game or it is still ongoing, if the game is a draw, or if the user has entered an impossible game state (two winners, or with one player having made too many moves).</p>
+<h5 id="objectives" style="text-align: center;">Objectives</h5>
+<p>In this stage, your program should:</p>
+<ol>
+<li>Take a string entered by the user and print the game grid as in the previous stage.</li>
+<li>Analyze the game state and print the result. Possible states:</li>
+</ol>
+<ul>
+<li><code class="java">Game not finished</code> when neither side has three in a row but the grid still has empty cells.</li>
+<li><code class="java">Draw</code>  when no side has a three in a row and the grid has no empty cells.</li>
+<li><code class="java">X wins</code> when the grid has three X’s in a row (including diagonals).</li>
+<li><code class="java">O wins</code> when the grid has three O’s in a row (including diagonals).</li>
+<li><code class="java">Impossible</code> when the grid has three X’s in a row as well as three O’s in a row, or there are a lot more X's than O's or vice versa (the difference should be 1 or 0; if the difference is 2 or more, then the game state is impossible). </li>
+</ul>
+<p>In this stage, we will assume that either X or O can start the game.</p>
+<p>You can choose whether to use a space <code class="java"> </code> or underscore <code class="java">_</code> to print empty cells.</p>
+<h5 id="examples" style="text-align: center;">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-no-highlight">&gt; XXXOO__O_
+---------
+| X X X |
+| O O _ |
+| _ O _ |
+---------
+X wins</code></pre>
+<p><strong>Example 2:</strong></p>
+<pre><code class="language-no-highlight">&gt; XOXOXOXXO
+---------
+| X O X |
+| O X O |
+| X X O |
+---------
+X wins</code></pre>
+<p><strong>Example 3:</strong></p>
+<pre><code class="language-no-highlight">&gt; XOOOXOXXO
+---------
+| X O O |
+| O X O |
+| X X O |
+---------
+O wins</code></pre>
+<p><strong>Example 4:</strong></p>
+<pre><code class="language-no-highlight">&gt; XOXOOXXXO
+---------
+| X O X |
+| O O X |
+| X X O |
+---------
+Draw</code></pre>
+<p><strong>Example 5:</strong></p>
+<pre><code class="language-no-highlight">&gt; XO_OOX_X_
+---------
+| X O   |
+| O O X |
+|   X   |
+---------
+Game not finished</code></pre>
+<p><strong>Example 6:</strong></p>
+<pre><code class="language-no-highlight">&gt; XO_XO_XOX
+---------
+| X O _ |
+| X O _ |
+| X O X |
+---------
+Impossible</code></pre>
+<p><strong>Example 7:</strong></p>
+<pre><code class="language-no-highlight">&gt; _O_X__X_X
+---------
+|   O   |
+| X     |
+| X   X |
+---------
+Impossible</code></pre>
+<p><strong>Example 8:</strong></p>
+<pre><code class="language-no-highlight">&gt; _OOOO_X_X
+---------
+|   O O |
+| O O   |
+| X   X |
+---------
+</code></pre>
