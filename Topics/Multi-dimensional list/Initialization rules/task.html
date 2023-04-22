@@ -1,0 +1,26 @@
+<h2>Initialization rules</h2>
+<p></p>
+<p>Select all correct initializations of a multidimensional list:</p>
+<p><b>Tip:</b> Don't forget that in a single multidimensional list, there may be lists of different types and lengths. Meanwhile, if you have initialized a one-dimensional list of a certain type, you cannot fill it with elements of other types. </p>
+<p>a)</p>
+<pre><code class="language-kotlin">val mutListMD = mutableListOf(
+    mutableListOf(),
+    mutableListOf()
+)</code></pre>
+<p>b)</p>
+<pre><code class="language-kotlin">val mutListMD = mutableListOf(
+    mutableListOf(mutableListOf&lt;Boolean&gt;(true, true), mutableListOf&lt;Int&gt;(1, 1)),
+    mutableListOf(mutableListOf&lt;Int&gt;(1, 1), mutableListOf&lt;Boolean&gt;(true, true))
+)</code></pre>
+<p>c)</p>
+<pre><code class="language-kotlin">val mutListMD = mutableListOf(
+    mutableListOf&lt;String&gt;(1, 2, 0),
+    mutableListOf&lt;String&gt;(0, 2, 5),
+    mutableListOf&lt;String&gt;(5, 1, 0)
+)
+</code></pre>
+<p>d)</p>
+<pre><code class="language-kotlin">val mutListMD = mutableListOf(
+    mutableListOf('q', 'w', 'e'),
+    mutableListOf('r', 't', 'y')
+)</code></pre>

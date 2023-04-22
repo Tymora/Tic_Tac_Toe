@@ -1,0 +1,18 @@
+<h2>Reverse printing</h2>
+<p></p>
+<p>You have a function <code class="language-kotlin">reversePrint</code>, which allows you to output numbers from a list in reverse order. </p>
+<pre><code class="language-kotlin">fun reversePrint() {
+    val numbers = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+    for (index in numbers.lastIndex ... 0 ... 2) {
+        println("$index: ${numbers[index]}")
+    }
+}</code></pre>
+<p>However, the function doesn't work – something is missing in it. What should you write instead of the two ellipses (<code class="language-kotlin">...</code>) to get the result as follows:</p>
+<pre><code class="language-no-highlight">9: 10
+7: 8
+5: 6
+3: 4
+1: 2
+</code></pre>
+<p>Type the missing words separated by a space. Don't print full code, only two words!</p>

@@ -1,0 +1,22 @@
+<h2>Kotlin lists</h2>
+<p></p>
+<p>Write code that prints the third row of <code class="language-kotlin">inputList</code> in one string. The elements should be separated by a comma and space.</p>
+<p>It is guaranteed that <code class="language-kotlin">inputList</code> is already initialized and contains at least 3 nested lists.</p>
+<p><b>Tip:</b>  Use the <code class="language-kotlin">joinToString()</code> function. </p>
+<p><strong>Sample Input 1:</strong></p>
+<pre><code class="language-kotlin">val inputList = mutableListOf(
+    mutableListOf("one", "two", "three"),
+    mutableListOf("four", "five", "six"),
+    mutableListOf("seven", "eight", "nine"),
+    mutableListOf("ten", "eleven", "twelve")
+)</code></pre>
+<p><strong>Sample Output 1:</strong></p>
+<pre><code class="language-no-highlight">7, 8, 9</code></pre>
+<p><strong>Sample Input 2:</strong></p>
+<pre><code class="language-kotlin">val inputList = mutableListOf(
+    mutableListOf("(¬‿¬)_", "Program"),
+    mutableListOf("_(^.^)/", "with"),
+    mutableListOf("(&gt;^_^)&gt;", "Kotlin!")
+)</code></pre>
+<p><strong>Sample Output 2:</strong></p>
+<pre><code class="language-no-highlight">(&gt;^_^)&gt;, Kotlin!</code></pre><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">4<br>(¬‿¬)_ Program<br>_(^.^)/ with<br>(&gt;^_^)&gt; Kotlin!<br>wrong row</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">(&gt;^_^)&gt;, Kotlin!</code></pre><br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>
