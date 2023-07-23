@@ -1,0 +1,32 @@
+<h2>Processing strings</h2>
+<p>In some sense, a string looks like a list of characters. You can <strong>iterate </strong>both over strings and lists. However, sometimes you need to turn a string into a list.</p><h5 id="splitting-the-string">Splitting the string</h5><p>A string can be separated by delimiters to a list of strings. To perform this, call the method <code class="language-kotlin">split()</code> , it divides a string into substrings by a <strong>separator</strong>.  In the previous example, we used the <code class="language-kotlin">" "</code> delimiter, which splits a string into separate words by spaces. Notably, the delimiter itself is not included in any of the substrings.</p><p>The method returns a <code class="language-kotlin">List</code> of all the substrings. The <code class="language-kotlin">List</code> is similar to <code class="language-kotlin">MutableList</code>, but you <strong>cannot reassign </strong>elements in the <code class="language-kotlin">List</code> and you cannot resize the <code class="language-kotlin">List</code>. You can easily convert <code class="language-kotlin">List</code> to <code class="language-kotlin">MutableList</code> and vice versa with <code class="language-kotlin">toMutableList()</code> and <code class="language-kotlin">toList()</code> functions.</p><pre><code class="language-kotlin">val sentence = "a long text"
+val wordsList: List&lt;String&gt; = sentence.split(" ") // ["a", "long", "text"]
+
+val mutableWordList = sentence.split(" ").toMutableList() // MutableList ["a", "long", "text"]</code></pre><p>Let's try to split an American phone number into country code, area code, central office code, and other remaining digits:</p><pre><code class="language-kotlin">val number = "+1-213-345-6789"
+val parts = number.split("-") // ["+1", "213", "345", "6789"]
+</code></pre><p>Note that all the parts are still strings no matter how they look!</p><p>Choose your delimiter wisely, otherwise, you can receive some sentences that start with a space:</p><pre><code class="language-kotlin">val text = "That's one small step for a man, one giant leap for mankind."
+val parts = text.split(",") // ["That's one small step for a man", " one giant leap for mankind."]
+</code></pre><p>You can choose any delimiter you prefer, even the combination of spaces and words:</p><pre><code class="language-kotlin">val text = "I'm gonna be a programmer"
+val parts = text.split(" gonna be ") // ["I'm", "a programmer"]</code></pre><p>As you can see, the split method is also a good tool to get rid of something you don't need or don't want to use.</p><h5 id="iterating-over-a-string">Iterating over a string</h5><p>It's possible to iterate over characters of a string using a loop<strong>.</strong></p><p>See the following example of iterating with range indices.</p><pre><code class="language-kotlin">val scientistName = "Isaac Newton"
+
+for (i in 0 until scientistName.length) {
+    print("${scientistName[i]} ") // print the current character
+}</code></pre><p>The code outputs:</p><pre><code class="language-kotlin">I s a a c   N e w t o n </code></pre><p>Also,  you can iterate through a string:</p><pre><code class="language-kotlin">val str = "strings are not primitive types!"
+
+var count = 0
+for (ch in str) {
+    if (Character.isWhitespace(ch))
+        count++
+}
+
+println(count) // 4</code></pre><p>The code above counts and prints the number of spaces in <code class="language-kotlin">str</code>. The result is 4.</p><p>Example of iterating through an array by indices:</p><pre><code class="language-kotlin">val rainbow = "ROYGCBV"
+
+for (index in rainbow.indices){
+    println("${index+1}: ${rainbow[index]}")
+}</code></pre><p>The code above prints the colors of the rainbow with their numbers. The output is:</p><pre><code class="language-no-highlight">1: R
+2: O
+3: Y
+4: G
+5: C
+6: B
+7: V</code></pre><h5 id="conclusion">Conclusion</h5><p>In this section, we have discussed simple ways to handle strings. It may sound simple, but this knowledge can help you solve even non-trivial problems. Good luck with your tasks!</p>
