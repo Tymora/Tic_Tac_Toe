@@ -1,0 +1,76 @@
+<h2>When expression</h2>
+<p>Kotlin provides a special <code class="language-kotlin">when</code> expression to perform different actions depending on the value of a variable. It is a very convenient approach to choose an option when you have several. This expression can replace <code class="language-kotlin">if</code><strong> </strong>and make your code more readable.</p><h5 id="alternatives">Alternatives</h5><p>For example, the program below performs addition, subtraction, and multiplication of two integer numbers. It uses <code class="language-kotlin">when</code> to decide what operation to perform:</p><pre><code class="language-kotlin">fun main(){
+    val (var1, op, var2) = readln().split(" ")
+
+    val a = var1.toInt()
+    val b = var2.toInt()
+
+    when (op) {
+        "+" -&gt; println(a + b)
+        "-" -&gt; println(a - b)
+        "*" -&gt; println(a * b)
+        else -&gt; println("Unknown operator")
+    }
+}</code></pre><p>Let's take a closer look at it. Here, <code class="language-kotlin">when</code> takes an <code class="language-kotlin">op</code> and matches it against all values, one by one, until it finds a suitable value. There are three regular branches — <code class="language-kotlin">"+"</code>, <code class="language-kotlin">"-"</code>, <code class="language-kotlin">"*"</code>, and also one <code class="language-kotlin">else</code> branch. The <code class="language-kotlin">else</code> branch is performed if none of the values matches the operator. You can skip the <code class="language-kotlin">else</code> branch, it is optional. If you write the same code with <code class="language-kotlin">if</code>, it would be less readable.</p><p>If there are several cases to handle it, you can combine and separate them with a comma. You can combine as many values as you need in one branch. You can add a trailing comma. It can be helpful if you need to add a long list of cases. Here you can see a modified code snippet from the previous program:</p><pre><code class="language-kotlin">when (op) {
+    "+", "plus" -&gt; println(a + b)
+    "-", "minus", -&gt; println(a - b) // trailing comma
+    "*", "times" -&gt; println(a * b)
+    else -&gt; println("Unknown operator")
+}
+</code></pre><p>This code works for the <code class="language-kotlin">5 + 8</code> input as well as for <code class="language-kotlin">5 plus 8</code>.</p><p>You can also use complex blocks with multiple statements as branches:</p><pre><code class="language-kotlin">when (op) {
+    "+", "plus" -&gt; {
+        val sum = a + b
+        println(sum)
+    }
+    "-", "minus" -&gt; {
+        val diff = a - b
+        println(diff)
+    }
+    "*", "times" -&gt; {
+        val product = a * b
+        println(product)
+    }
+    else -&gt; println("Unknown operator")
+}</code></pre><p>As you can see, there are different ways to employ a <code class="language-kotlin">when</code> expression. Try to stick to the most readable one.</p><h5 id="when-as-an-expression">When as an expression</h5><p><code class="language-kotlin">When</code> can also return a result. In this case, every branch should return something, and an <code class="language-kotlin">else</code> branch is <strong>required</strong>. In the code example below, every branch returns a result of the corresponding operation.</p><pre><code class="language-kotlin">val result = when (op) {
+    "+" -&gt; a + b
+    "-" -&gt; a - b
+    "*" -&gt; a * b
+    else -&gt; "Unknown operator"
+}
+println(result)</code></pre><p>You don't need to declare an additional variable and can immediately pass the result to a function. Take a look at the example below:</p><pre><code class="language-kotlin">println(when(op) {
+    "+" -&gt; a + b
+    // ...
+    else -&gt; "Unknown operator"
+})</code></pre><p>Use this notation if you do not need to use the result somewhere else or when you keep your code short.</p><p>If a branch contains a block with multiple statements enclosed in <code class="language-kotlin">{...}</code>, the last line must be a single value or a complex expression that will be performed and returned as the result of the <code class="language-kotlin">when</code> expression. Take a look at the modified branch from our example above:</p><pre><code class="language-kotlin">"+" -&gt; {
+    val sum = a + b
+    sum
+}</code></pre><p>Choose shorter forms without <code class="language-kotlin">{...}</code> in branches to make your code easier to understand.</p><h5 id="branch-conditions-and-ranges">Branch conditions and ranges</h5><p>If you work with other programming languages like Java or C#, you may note that <code class="language-kotlin">when</code> is similar to a <code class="language-kotlin">switch</code> statement. <code class="language-kotlin">When</code> provides more complex checking, not only directly matching a value.</p><p>The program below reads three integer numbers <code class="language-kotlin">a</code>, <code class="language-kotlin">b</code>, and <code class="language-kotlin">c</code>, and then tries to determine how to calculate <code class="language-kotlin">c</code> using <code class="language-kotlin">a</code> and <code class="language-kotlin">b</code>. If there are many ways to calculate <code class="language-kotlin">c</code>, it will print only the first one:</p><pre><code class="language-kotlin">fun main(){
+    val (var1, var2, var3) = readln().split(" ")
+
+    val a = var1.toInt()
+    val b = var2.toInt()
+    val c = var3.toInt()
+
+    println(when (c) {
+        a + b -&gt; "$c equals $a plus $b"
+        a - b -&gt; "$c equals $a minus $b"
+        a * b -&gt; "$c equals $a times $b"
+        else -&gt; "We do not know how to calculate $c"
+    })
+}</code></pre><p>if input values are <code class="language-kotlin">5 3 2</code> the program outputs <code class="language-kotlin">2 equals 5 minus 3</code>. If input values are <code class="language-kotlin">0 0 0</code>, it outputs <code class="language-kotlin">0 equals 0 plus 0</code>.</p><p>Another interesting possibility is to check whether a value belongs to a range. Take a look:</p><pre><code class="language-kotlin">when (n) {
+    0 -&gt; println("n is zero")
+    in 1..10 -&gt; println("n is between 1 and 10 (inclusive)")
+    in 25..30 -&gt; println("n is between 25 and 30 (inclusive)")
+    else -&gt; println("n is outside a range")
+}
+</code></pre><p>If the integer variable <code class="language-kotlin">n</code> is <code class="language-kotlin">0</code>, the program evaluates the first branch. If <code class="language-kotlin">n</code> belongs to the 1-10 range inclusively, it evaluates the second branch. If <code class="language-kotlin">n</code> belongs to the range from 25 to 30 (including both borders), it evaluates the third branch. If <code class="language-kotlin">n</code> is not equal to <code class="language-kotlin">0</code> and does not belong to either range, the <code class="language-kotlin">else</code> branch is evaluated.</p><p>You can also combine ranges with a comma just like single values. It looks like this:</p><pre><code class="language-kotlin">in a..b, in c..d -&gt; println("n belongs to a range")</code></pre><p></p><h5 id="when-without-arguments">When without arguments</h5><p>You can use a <code class="language-kotlin">when</code> expression without arguments. In this case, every branch condition is a simple boolean expression, and a branch is executed when its condition is <code class="language-kotlin">true</code>. If several conditions are <code class="language-kotlin">true</code>, only the first one will be executed.</p><p>The program below shows how it works:</p><pre><code class="language-kotlin">fun main(){
+    val n = readln().toInt()
+    
+    when {
+        n == 0 -&gt; println("n is zero")
+        n in 100..200 -&gt; println("n is between 100 and 200")
+        n &gt; 300 -&gt; println("n is greater than 300")
+        n &lt; 0 -&gt; println("n is negative")
+        // else-branch is optional here
+    }
+}</code></pre><p>Hint</p><details><div><p>Every branch condition is a boolean expression that may include any operations producing booleans.</p></div></details><p></p><h5 id="conclusion">Conclusion</h5><p>In this topic, we have covered several cases of the <code class="language-kotlin">when</code> statement. It provides complex value matching and can help make our code easier to understand. Try to use different forms of <code class="language-kotlin">when</code> in our practice exercises. Do not be afraid to experiment. Remember: <code class="language-kotlin">when</code> is a very powerful construction design with multiple possibilities.</p>

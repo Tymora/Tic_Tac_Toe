@@ -1,0 +1,10 @@
+<h2>String processor</h2>
+<p>Write a program that emulates a string processor. It reads two strings and an operator and outputs the result.</p>
+<p>There are three possible operations:</p>
+<ul>
+<li><code class="java">equals</code> returns <code class="java">true</code> if these strings are equals, otherwise <code class="java">false</code> (<code class="java">s1==s2</code>);</li>
+<li><code class="java">plus</code> appends the second line to the first line (<code class="java">s1+s2</code>);</li>
+<li><code class="java">endsWith</code> returns <code class="java">true</code> if the first string ends with the second string, otherwise <code class="java">false</code> (<code class="java">s1.endsWith(s2)</code>).</li>
+</ul>
+<p>Output the result as a string. If the operation is unknown, print <code class="java">Unknown operation</code><strong> </strong>without quotes.</p>
+<p>[HINT]You can use the <code class="java">endsWith(suffix)</code> string function to find whether the string ends with a specified string.[/HINT]</p><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">abc<br>equals<br>cde</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">false</code></pre><br><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">abbc<br>plus<br>bb</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">abbcbb</code></pre><br><br><b>Sample Input:</b><br><pre><code class="language-no-highlight">abbc<br>endsWith<br>bc</code></pre><br><b>Sample Output:</b><br><pre><code class="language-no-highlight">true</code></pre><br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>
