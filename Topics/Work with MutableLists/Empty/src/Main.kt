@@ -1,1 +1,0 @@
-var myEmptyList = mutableListOf<String>()
